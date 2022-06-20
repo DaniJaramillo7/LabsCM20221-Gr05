@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalDataActivity">
+
+    <ImageView
+        android:id="@+id/icon_names"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <EditText
+        android:id="@+id/input_name"
+        android:layout_width="241dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/input_hint_names"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toEndOf="@+id/icon_names"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048" />
+
+    <EditText
+        android:id="@+id/input_surname"
+        android:layout_width="241dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="@string/input_hint_surnames"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toEndOf="@+id/icon_surnames"
+        app:layout_constraintTop_toBottomOf="@+id/input_name"
+        app:layout_constraintVertical_bias="0.04" />
+
+    <ImageView
+        android:id="@+id/icon_surnames"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintStart_toStartOf="@+id/icon_names"
+        app:layout_constraintTop_toBottomOf="@+id/icon_names"
+        app:srcCompat="@drawable/ic_baseline_person_24" />
+
+    <ImageView
+        android:id="@+id/icon_sex"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="@+id/icon_surnames"
+        app:layout_constraintTop_toBottomOf="@+id/icon_surnames"
+        app:srcCompat="@drawable/ic_baseline_local_fire_department_24" />
+
+    <TextView
+        android:id="@+id/label_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/label_sex"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/icon_sex"
+        app:layout_constraintTop_toBottomOf="@+id/input_surname" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/label_sex"
+        app:layout_constraintTop_toBottomOf="@+id/input_surname">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_radio_button_1"
+            android:textColor="@color/grey_600"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/icon_surnames"
+            app:layout_constraintTop_toBottomOf="@+id/icon_surnames"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/label_radio_button_2"
+            android:textColor="@color/grey_600"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/icon_surnames"
+            app:layout_constraintTop_toBottomOf="@+id/icon_surnames"
+            app:layout_constraintVertical_bias="0.037" />
+    </RadioGroup>
+
+    <ImageView
+        android:id="@+id/icon_date"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="@+id/icon_sex"
+        app:layout_constraintTop_toBottomOf="@+id/icon_sex"
+        app:srcCompat="@drawable/ic_baseline_local_fire_department_24" />
+
+    <TextView
+        android:id="@+id/label_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/label_date"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/icon_sex"
+        app:layout_constraintTop_toBottomOf="@+id/label_sex" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
