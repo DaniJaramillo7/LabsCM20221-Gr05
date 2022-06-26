@@ -13,7 +13,7 @@ class DatePickerFragment(val listener: (year: Int, month: Int, day: Int) -> Unit
     }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return DatePickerDialog(activity as Context, this, -1,-1,-1)
+        return DatePickerDialog(activity as Context, R.style.datePickerTheme, this, -1,-1,-1)
     }
 
 }
