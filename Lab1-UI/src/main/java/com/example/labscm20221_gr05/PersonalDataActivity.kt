@@ -3,14 +3,33 @@ package com.example.labscm20221_gr05
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Button
 
 class PersonalDataActivity : AppCompatActivity() {
+
+    private lateinit var grades: Array<String>
+    lateinit var inputGrade: AutoCompleteTextView
+    lateinit var adapterItems: ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_data)
         findViewById<Button>(R.id.button_date).setOnClickListener {
             showDatePickerDialog()
+        }
+        grades = resources.getStringArray(R.array.grades)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        adapterItems = ArrayAdapter(this, R.layout.dropdown_item, grades)
+        inputGrade = findViewById(R.id.input_grade)
+        inputGrade.setAdapter(adapterItems)
+        inputGrade.setOnItemClickListener{ parent, view, position, id ->
+            Log.d("position", grades[position])
         }
     }
 

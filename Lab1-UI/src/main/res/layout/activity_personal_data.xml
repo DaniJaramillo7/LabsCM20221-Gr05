@@ -116,6 +116,15 @@
         app:layout_constraintTop_toBottomOf="@+id/icon_sex"
         app:srcCompat="@drawable/ic_baseline_local_fire_department_24" />
 
+    <ImageView
+        android:id="@+id/icon_grade"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toStartOf="@+id/icon_date"
+        app:layout_constraintTop_toBottomOf="@+id/icon_date"
+        app:srcCompat="@drawable/ic_baseline_school_24" />
+
     <TextView
         android:id="@+id/label_date"
         android:layout_width="wrap_content"
@@ -136,6 +145,24 @@
         android:text="Button"
         app:layout_constraintStart_toEndOf="@+id/label_date"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@+id/icon_grade"
+        app:layout_constraintTop_toBottomOf="@+id/label_date">
+
+        <AutoCompleteTextView
+            android:id="@+id/input_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="@string/educational_stage" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
