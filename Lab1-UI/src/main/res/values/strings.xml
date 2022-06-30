@@ -7,6 +7,7 @@
     <string name="label_radio_button_1">Hombre</string>
     <string name="label_radio_button_2">Mujer</string>
     <string name="label_date">Fecha de nacimiento:</string>
+    <string name="button_date">Cambiar</string>
     <string name="educational_stage">Grado de escolaridad</string>
 
     <string-array name="grades">
