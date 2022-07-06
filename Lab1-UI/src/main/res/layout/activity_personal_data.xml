@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/input_surname" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/sex_options"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -88,7 +88,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/label_radio_button_1"
+            android:text="@string/male"
             android:textSize="20sp"
             android:textColor="@color/grey_600"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -100,7 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="@string/label_radio_button_2"
+            android:text="@string/female"
             android:textSize="20sp"
             android:textColor="@color/grey_600"
             app:layout_constraintBottom_toBottomOf="parent"
