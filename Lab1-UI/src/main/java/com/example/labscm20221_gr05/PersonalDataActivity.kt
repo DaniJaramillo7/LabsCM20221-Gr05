@@ -10,8 +10,6 @@ import android.widget.Button
 class PersonalDataActivity : AppCompatActivity() {
 
     private lateinit var grades: Array<String>
-    lateinit var inputGrade: AutoCompleteTextView
-    lateinit var adapterItems: ArrayAdapter<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +23,8 @@ class PersonalDataActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        adapterItems = ArrayAdapter(this, R.layout.dropdown_item, grades)
-        inputGrade = findViewById(R.id.input_grade)
+        var adapterItems: ArrayAdapter<String> = ArrayAdapter(this, R.layout.dropdown_item, grades)
+        var inputGrade: AutoCompleteTextView = findViewById(R.id.input_grade)
         inputGrade.setAdapter(adapterItems)
         inputGrade.setOnItemClickListener{ parent, view, position, id ->
             Log.d("position", grades[position])
