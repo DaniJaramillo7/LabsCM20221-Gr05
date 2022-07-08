@@ -11,11 +11,6 @@
     <string name="educational_stage">Grado de escolaridad</string>
     <string name="next">Siguiente</string>
 
-    <string-array name="genres">
-        <item>Masculino</item>
-        <item>Femenino</item>
-    </string-array>
-
     <string-array name="grades">
         <item>Primaria</item>
         <item>Secundaria</item>

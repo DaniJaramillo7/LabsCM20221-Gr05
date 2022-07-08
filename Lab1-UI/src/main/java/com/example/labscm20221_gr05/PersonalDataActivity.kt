@@ -74,15 +74,17 @@ class PersonalDataActivity : AppCompatActivity() {
 
     fun onButtonNextTap() {
 
-        val genres = resources.getStringArray(R.array.genres)
-
         val name = findViewById<EditText>(R.id.input_name).text.toString()
         val surname = findViewById<EditText>(R.id.input_surname).text.toString()
-        var sexIndex: Int? = findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId
-        sexIndex = if (sexIndex == -1) null else sexIndex!! - 1;
+
+        var selectedSex: String? = null
+        if (findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId != -1) {
+            val selectedSexRadio: RadioButton = findViewById(findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId)
+            selectedSex = selectedSexRadio.text.toString()
+        }
         Log.d("Data", "Información personal")
         Log.d("Data", "$name $surname")
-        if (sexIndex != null) Log.d("Data", "${genres[sexIndex]}")
+        if (selectedSex != null) Log.d("Data", selectedSex)
         if (birthDate != null) Log.d("Data", "Nació el ${birthDate!!.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"))}")
         if (grade != null) Log.d("Data", grade!!)
     }
