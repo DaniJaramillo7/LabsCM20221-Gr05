@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import androidx.core.widget.doOnTextChanged
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -13,14 +14,31 @@ class PersonalDataActivity : AppCompatActivity() {
     private var birthDate: LocalDate? = null
     private var grade: String? = null
 
+    var nameIsValid: Boolean = false
+    var surnameIsValid: Boolean = false
+    var birthdayIsValid: Boolean = false
+    private var formIsValid: Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_data)
+
+        findViewById<EditText>(R.id.input_name).doOnTextChanged { text, start, before, count ->
+            nameIsValid = text.toString().trim().isNotEmpty();
+            evaluateFormIsValid();
+        }
+
+        findViewById<EditText>(R.id.input_surname).doOnTextChanged { text, start, before, count ->
+            surnameIsValid = text.toString().trim().isNotEmpty();
+            evaluateFormIsValid();
+        }
+
         findViewById<Button>(R.id.button_date).setOnClickListener {
             showDatePickerDialog()
         }
         grades = resources.getStringArray(R.array.grades)
 
+        findViewById<Button>(R.id.next).isEnabled = evaluateFormIsValid()
         findViewById<Button>(R.id.next).setOnClickListener {
             onButtonNextTap();
         }
@@ -42,8 +60,16 @@ class PersonalDataActivity : AppCompatActivity() {
         datePicker.show(supportFragmentManager, "datePicker")
     }
 
+    private fun evaluateFormIsValid(): Boolean {
+        formIsValid =  nameIsValid && surnameIsValid && birthdayIsValid
+        findViewById<Button>(R.id.next).isEnabled = formIsValid
+        return formIsValid
+    }
+
     fun onDateSelected(year: Int, month: Int, day: Int) {
         birthDate = LocalDate.of(year, month, day)
+        birthdayIsValid = true
+        evaluateFormIsValid()
     }
 
     fun onButtonNextTap() {
