@@ -10,7 +10,11 @@
     <string name="button_date">Cambiar</string>
     <string name="educational_stage">Grado de escolaridad</string>
     <string name="next">Siguiente</string>
-
+    <string name="input_hint_phone">Telefono</string>
+    <string name="input_hint_email">Correo</string>
+    <string name="input_hint_country">País</string>
+    <string name="input_hint_city">Ciudad</string>
+    <string name="input_hint_address">Direccion</string>
     <string-array name="genres">
         <item>Masculino</item>
         <item>Femenino</item>

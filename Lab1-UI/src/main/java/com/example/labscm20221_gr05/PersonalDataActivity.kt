@@ -1,5 +1,6 @@
 package com.example.labscm20221_gr05
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -59,5 +60,6 @@ class PersonalDataActivity : AppCompatActivity() {
         if (sexIndex != null) Log.d("Data", "${genres[sexIndex]}")
         if (birthDate != null) Log.d("Data", "Nació el ${birthDate!!.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"))}")
         if (grade != null) Log.d("Data", grade!!)
+        startActivity(Intent(this,ContactData::class.java))
     }
 }
