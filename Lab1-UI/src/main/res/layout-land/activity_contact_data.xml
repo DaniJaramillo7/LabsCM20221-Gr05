@@ -60,7 +60,17 @@
         android:minHeight="48dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/imageViewCity"
-        app:layout_constraintTop_toBottomOf="@+id/input_country" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewAddress"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="62dp"
+        app:layout_constraintStart_toEndOf="@+id/input_email"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewCity"
+        app:srcCompat="@drawable/ic_baseline_address_24" />
 
     <EditText
         android:id="@+id/input_address"
@@ -75,6 +85,16 @@
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/imageViewAddress"
         app:layout_constraintTop_toBottomOf="@+id/input_city" />
+
+    <ImageView
+        android:id="@+id/imageViewCity"
+        android:layout_width="42dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toEndOf="@+id/input_phone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_city_24" />
 
     <ImageView
         android:id="@+id/imageViewEmail"
@@ -97,26 +117,6 @@
         app:srcCompat="@drawable/ic_baseline_location_24" />
 
     <ImageView
-        android:id="@+id/imageViewCity"
-        android:layout_width="42dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="62dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewCountry"
-        app:srcCompat="@drawable/ic_baseline_city_24" />
-
-    <ImageView
-        android:id="@+id/imageViewAddress"
-        android:layout_width="42dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="62dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewCity"
-        app:srcCompat="@drawable/ic_baseline_address_24" />
-
-    <ImageView
         android:id="@+id/imageViewPhone"
         android:layout_width="42dp"
         android:layout_height="34dp"
@@ -130,11 +130,12 @@
         android:id="@+id/nextContact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
         android:text="@string/next"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.677"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toEndOf="@+id/input_country"
+        app:layout_constraintTop_toBottomOf="@+id/input_address" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
