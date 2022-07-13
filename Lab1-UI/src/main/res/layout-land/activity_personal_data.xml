@@ -41,26 +41,28 @@
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toEndOf="@+id/icon_surnames"
-        app:layout_constraintTop_toBottomOf="@+id/input_name"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
 
     <ImageView
         android:id="@+id/icon_surnames"
         android:layout_width="42dp"
         android:layout_height="34dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="@+id/icon_names"
-        app:layout_constraintTop_toBottomOf="@+id/icon_names"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toEndOf="@+id/input_name"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_person_24" />
 
     <ImageView
         android:id="@+id/icon_sex"
         android:layout_width="42dp"
         android:layout_height="34dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="44dp"
-        app:layout_constraintStart_toStartOf="@+id/icon_surnames"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon_surnames"
         app:srcCompat="@drawable/ic_baseline_local_fire_department_24" />
 
@@ -115,17 +117,28 @@
         android:id="@+id/icon_date"
         android:layout_width="42dp"
         android:layout_height="34dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="@+id/icon_sex"
         app:layout_constraintTop_toBottomOf="@+id/icon_sex"
         app:srcCompat="@drawable/ic_baseline_local_fire_department_24" />
+
+    <Button
+        android:id="@+id/button_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/button_date"
+        app:layout_constraintStart_toEndOf="@+id/label_date"
+        app:layout_constraintTop_toBottomOf="@+id/label_sex" />
 
     <ImageView
         android:id="@+id/icon_grade"
         android:layout_width="42dp"
         android:layout_height="34dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="@+id/icon_date"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/icon_date"
         app:srcCompat="@drawable/ic_baseline_school_24" />
 
@@ -134,21 +147,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="52dp"
         android:text="@string/label_date"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/icon_sex"
-        app:layout_constraintTop_toBottomOf="@+id/label_sex" />
-
-    <Button
-        android:id="@+id/button_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="38dp"
-        android:text="@string/button_date"
-        app:layout_constraintStart_toEndOf="@+id/label_date"
-        app:layout_constraintTop_toBottomOf="@+id/label_sex" />
+        app:layout_constraintTop_toTopOf="@+id/icon_date" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
