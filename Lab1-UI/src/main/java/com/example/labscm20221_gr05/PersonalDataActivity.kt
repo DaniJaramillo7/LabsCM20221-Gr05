@@ -14,22 +14,21 @@ class PersonalDataActivity : AppCompatActivity() {
     private var birthDate: LocalDate? = null
     private var grade: String? = null
 
-    var nameIsValid: Boolean = false
-    var surnameIsValid: Boolean = false
-    var birthdayIsValid: Boolean = false
     private var formIsValid: Boolean = false
+
+    val birthdayKey: String = "birthday"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_personal_data)
 
+        recoverState(savedInstanceState)
+
         findViewById<EditText>(R.id.input_name).doOnTextChanged { text, start, before, count ->
-            nameIsValid = text.toString().trim().isNotEmpty();
             evaluateFormIsValid();
         }
 
         findViewById<EditText>(R.id.input_surname).doOnTextChanged { text, start, before, count ->
-            surnameIsValid = text.toString().trim().isNotEmpty();
             evaluateFormIsValid();
         }
 
@@ -55,12 +54,27 @@ class PersonalDataActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        if(birthDate != null) outState.putLong(birthdayKey, birthDate!!.toEpochDay())
+    }
+
+    private fun recoverState(savedInstanceState: Bundle?): Unit {
+        if(savedInstanceState == null) return
+
+        val savedBirthDateEpochDay = savedInstanceState.getLong(birthdayKey ,-1)
+        if(!savedBirthDateEpochDay.equals(-1)) birthDate = LocalDate.ofEpochDay(savedBirthDateEpochDay)
+    }
+
     private fun showDatePickerDialog() {
         val datePicker = DatePickerFragment{year, month, day -> onDateSelected(year, month, day)}
         datePicker.show(supportFragmentManager, "datePicker")
     }
 
     private fun evaluateFormIsValid(): Boolean {
+        val nameIsValid = findViewById<EditText>(R.id.input_name).text.toString().trim().isNotEmpty()
+        val surnameIsValid = findViewById<EditText>(R.id.input_surname).text.toString().trim().isNotEmpty()
+        val birthdayIsValid = birthDate != null
         formIsValid =  nameIsValid && surnameIsValid && birthdayIsValid
         findViewById<Button>(R.id.next).isEnabled = formIsValid
         return formIsValid
@@ -68,7 +82,6 @@ class PersonalDataActivity : AppCompatActivity() {
 
     fun onDateSelected(year: Int, month: Int, day: Int) {
         birthDate = LocalDate.of(year, month, day)
-        birthdayIsValid = true
         evaluateFormIsValid()
     }
 
