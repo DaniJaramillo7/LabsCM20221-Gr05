@@ -77,15 +77,17 @@ class PersonalDataActivity : AppCompatActivity() {
         val name = findViewById<EditText>(R.id.input_name).text.toString()
         val surname = findViewById<EditText>(R.id.input_surname).text.toString()
 
-        var selectedSex: String? = null
-        if (findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId != -1) {
-            val selectedSexRadio: RadioButton = findViewById(findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId)
-            selectedSex = selectedSexRadio.text.toString()
-        }
+        var selectedSex = getSelectedSex()
         Log.d("Data", "Información personal")
         Log.d("Data", "$name $surname")
         if (selectedSex != null) Log.d("Data", selectedSex)
         if (birthDate != null) Log.d("Data", "Nació el ${birthDate!!.format(DateTimeFormatter.ofPattern("yyyy/MM/dd"))}")
         if (grade != null) Log.d("Data", grade!!)
+    }
+
+    private fun getSelectedSex(): String? {
+        if (findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId == -1) return null;
+        val selectedSexRadio: RadioButton = findViewById(findViewById<RadioGroup>(R.id.sex_options).checkedRadioButtonId)
+        return selectedSexRadio.text.toString()
     }
 }
