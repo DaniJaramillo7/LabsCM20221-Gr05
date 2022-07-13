@@ -1,30 +1,30 @@
 <resources>
-    <string name="app_name" translatable="false">LabsCM20221-Gr05</string>
-    <string name="appbar_personal_info">Personal information</string>
-    <string name="input_hint_names">Names</string>
-    <string name="input_hint_surnames">Surnames</string>
-    <string name="label_sex">Gender:</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="label_date">Date of Birth:</string>
-    <string name="button_date">Change</string>
-    <string name="educational_stage">Educational stage</string>
-    <string name="next">Next</string>
-    <string name="input_hint_phone">Phone</string>
-    <string name="input_hint_email">Email</string>
-    <string name="input_hint_country">Country</string>
-    <string name="input_hint_city">City</string>
-    <string name="input_hint_address">Address</string>
+    <string name="app_name">LabsCM20221-Gr05</string>
+    <string name="appbar_personal_info">Información personal</string>
+    <string name="input_hint_names">Nombres</string>
+    <string name="input_hint_surnames">Apellidos</string>
+    <string name="label_sex">Sexo:</string>
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="label_date">Fecha de nacimiento:</string>
+    <string name="button_date">Cambiar</string>
+    <string name="educational_stage">Grado de escolaridad</string>
+    <string name="next">Siguiente</string>
+    <string name="input_hint_phone">Telefono</string>
+    <string name="input_hint_email">Correo</string>
+    <string name="input_hint_country">País</string>
+    <string name="input_hint_city">Ciudad</string>
+    <string name="input_hint_address">Direccion</string>
     <string-array name="genres">
-        <item>Male</item>
-        <item>Female</item>
+        <item>Masculino</item>
+        <item>Femenino</item>
     </string-array>
 
     <string-array name="grades">
-        <item>Primary</item>
-        <item>Secondary</item>
-        <item>University</item>
-        <item>Other</item>
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otro</item>
     </string-array>
 
     <string-array name="countries">

@@ -34,7 +34,7 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewEmail"
         app:layout_constraintTop_toBottomOf="@+id/input_phone" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/input_country"
         android:layout_width="241dp"
         android:layout_height="wrap_content"
@@ -46,9 +46,10 @@
         android:minHeight="48dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/imageViewCountry"
-        app:layout_constraintTop_toBottomOf="@+id/input_email" />
+        app:layout_constraintTop_toBottomOf="@+id/input_email"
+        android:completionThreshold="1" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/input_city"
         android:layout_width="241dp"
         android:layout_height="wrap_content"
@@ -60,7 +61,9 @@
         android:minHeight="48dp"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/imageViewCity"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:completionThreshold="1"
+        />
 
     <ImageView
         android:id="@+id/imageViewAddress"
